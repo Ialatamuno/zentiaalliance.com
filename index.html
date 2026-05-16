@@ -16,54 +16,75 @@
 </head>
 <body>
 
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">Zentia<span>.Alliance</span></div>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
     <!-- Navigation -->
     <nav id="main-nav">
         <div class="container">
             <div class="logo">Zentia<span>.Alliance</span></div>
             <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
                 <li><a href="#about" class="lang-es">Nosotros</a><a href="#about" class="lang-pt">Nós</a></li>
                 <li><a href="#divisions" class="lang-es">Divisiones</a><a href="#divisions" class="lang-pt">Divisões</a></li>
-                <li><a href="#partners" class="lang-es">Partners</a><a href="#partners" class="lang-pt">Parceiros</a></li>
+                <li><a href="#why" class="lang-es">Expertise</a><a href="#why" class="lang-pt">Expertise</a></li>
                 <li><a href="#contact" class="lang-es">Contacto</a><a href="#contact" class="lang-pt">Contato</a></li>
             </ul>
-            <div class="lang-switcher">
-                <button id="toggle-es" class="active">ES</button>
-                <span class="separator">|</span>
-                <button id="toggle-pt">PT</button>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button id="toggle-es" class="active">ES</button>
+                    <button id="toggle-pt">PT</button>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="grid-overlay"></div>
+        <div class="hero-bg-wrapper">
+            <div class="hero-overlay"></div>
+            <div class="grid-lines"></div>
+        </div>
         <div class="container hero-content">
-            <div class="vertical-line"></div>
-            <div class="hero-text">
-                <span class="badge">서울</span>
-                <h1 class="reveal-up">
-                    <span class="lang-es">Conectando la excelencia <br>con visión <i>estratégica</i></span>
-                    <span class="lang-pt">Conectando a excelência <br>com visão <i>estratégica</i></span>
-                </h1>
-                <p class="reveal-up delay-1">
-                    <span class="lang-es">Consultoría B2B premium entre Corea y América Latina. Autoridad, confianza e innovación global.</span>
-                    <span class="lang-pt">Consultoria B2B premium entre a Coreia e a América Latina. Autoridade, confiança e inovação global.</span>
-                </p>
-                <div class="hero-btns reveal-up delay-2">
-                    <a href="#contact" class="btn btn-gold">
-                        <span class="lang-es">Iniciar Programa</span>
-                        <span class="lang-pt">Iniciar Programa</span>
-                    </a>
-                    <a href="#about" class="btn btn-outline">
-                        <span class="lang-es">Descubrir Zentia</span>
-                        <span class="lang-pt">Descobrir Zentia</span>
-                    </a>
+            <div class="hero-main">
+                <div class="reveal-stagger">
+                    <span class="badge-premium">Strategic Intelligence | Seoul — Latam</span>
+                    <h1 class="hero-title">
+                        <span class="lang-es">Liderando la integración <br>corporativa <i>transpacífica</i></span>
+                        <span class="lang-pt">Liderando a integração <br>corporativa <i>transpacífica</i></span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="lang-es">Soluciones estratégicas de alto nivel para corporaciones globales. Facilitamos el acceso a mercados, tecnología y alianzas institucionales premium.</span>
+                        <span class="lang-pt">Soluções estratégicas de alto nível para corporações globais. Facilitamos o acesso a mercados, tecnologia e parcerias institucionais premium.</span>
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-premium gold">
+                            <span class="lang-es">Consultoría Estratégica</span>
+                            <span class="lang-pt">Consultoria Estratégica</span>
+                        </a>
+                        <a href="#about" class="btn-premium outline">
+                            <span class="lang-es">Nuestra Visión</span>
+                            <span class="lang-pt">Nossa Visão</span>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll to explore</span>
         </div>
     </section>
 

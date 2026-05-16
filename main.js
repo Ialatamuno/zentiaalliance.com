@@ -2,7 +2,41 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Language Toggle Logic
+    // 0. Preloader Removal
+    const preloader = document.getElementById('preloader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+        }, 1000);
+    });
+
+    // 1. Scroll Progress & Parallax
+    const scrollProgress = document.getElementById('scroll-progress');
+    const heroBg = document.querySelector('.hero-bg-wrapper');
+
+    window.addEventListener('scroll', () => {
+        // Scroll Progress
+        const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalScroll) * 100;
+        scrollProgress.style.width = `${progress}%`;
+
+        // Hero Parallax
+        if (heroBg) {
+            const scrollValue = window.scrollY;
+            heroBg.style.transform = `scale(1.1) translateY(${scrollValue * 0.3}px)`;
+        }
+
+        // Nav Scrolled State
+        const nav = document.getElementById('main-nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // 2. Language Toggle Logic
     const html = document.documentElement;
     const btnEs = document.getElementById('toggle-es');
     const btnPt = document.getElementById('toggle-pt');
@@ -16,44 +50,38 @@ document.addEventListener('DOMContentLoaded', () => {
             btnPt.classList.add('active');
             btnEs.classList.remove('active');
         }
-        // Store preference
         localStorage.setItem('zentia-lang', lang);
     };
 
     btnEs.addEventListener('click', () => setLanguage('es'));
     btnPt.addEventListener('click', () => setLanguage('pt'));
 
-    // Check stored preference
     const storedLang = localStorage.getItem('zentia-lang');
     if (storedLang) setLanguage(storedLang);
 
 
-    // 2. Navigation Scroll Effect
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-
-
-    // 3. Scroll Reveal Animations
-    const revealElements = document.querySelectorAll('.reveal-up');
+    // 3. Advanced Scroll Reveal
+    const revealElements = document.querySelectorAll('.reveal-up, .reveal-stagger > *');
     
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+                // Optional: stop observing once revealed
+                // revealObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach((el, index) => {
+        // Add manual delay for staggering if in a container
+        if (el.parentElement.classList.contains('reveal-stagger')) {
+            el.style.transitionDelay = `${index * 0.15}s`;
+        }
+        revealObserver.observe(el);
+    });
 
 
     // 4. Mobile Menu Toggle (Simplified)

@@ -150,11 +150,15 @@
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            color: var(--color-azul-marino);
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo img {
+            max-height: 35px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -803,11 +807,16 @@
         }
 
         .footer-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
-            letter-spacing: 0.15em;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            max-height: 45px;
+            width: auto;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
         }
 
         .footer-slogan {
@@ -878,7 +887,7 @@
 
     <nav id="navbar">
         <div class="container">
-            <a href="#" class="logo">ZENTIA ALLIANCE</a>
+            <a href="#" class="logo"><img src="logo.png" alt="Zentia Alliance"></a>
             <div style="display: flex; align-items: center; gap: 20px;">
                 <ul class="nav-links">
                     <li><a href="#" class="active" data-translate="nav-inicio">Inicio</a></li>
@@ -1039,8 +1048,7 @@
                     <button class="tab-btn active" id="tab-med" onclick="showTab('medical')" data-translate="tab-medical">Strategic Medical Partners</button>
                     <button class="tab-btn" id="tab-education" onclick="showTab('edu')" data-translate="tab-edu">Education & Innovation Partners</button>
                     <button class="tab-btn" id="tab-tour" onclick="showTab('tourism')" data-translate="tab-tourism">Tourism & Operational Partners</button>
-                    <button class="tab-btn" id="tab-op" onclick="showTab('operational')" data-translate="tab-op-alliance">Korea-Based Operational Alliance</button>
-                    <button class="tab-btn" id="tab-m" onclick="showTab('mice')" data-translate="tab-mice">MICE & Expo Ecosystem</button>
+                                        <button class="tab-btn" id="tab-m" onclick="showTab('mice')" data-translate="tab-mice">MICE & Expo Ecosystem</button>
                 </div>
                 
                 <div id="medical" class="tab-content logo-grid">
@@ -1068,74 +1076,6 @@
                     <div class="logo-placeholder">Transport VIP</div>
                 </div>
 
-                <!-- New B2B Subsection tab content -->
-                <div id="operational" class="tab-content" style="display:none;">
-                    <p class="section-p" data-translate="op-subtitle">Infraestructura operativa, coordinación local y red profesional desarrollada en Corea para programas estratégicos entre Corea y América Latina.</p>
-                    <p class="section-p-main" data-translate="op-text-main">Zentia Alliance trabaja como un grupo de empresas, especialistas y partners estratégicos que operan localmente en Seúl, Corea. Nuestra estructura combina coordinación internacional, operación local y colaboración especializada en áreas relacionadas con turismo premium, programas educativos, medical wellness y experiencias estratégicas desarrolladas para el mercado latinoamericano. Parte de nuestra red operativa cuenta con registros comerciales, autorizaciones, reconocimientos institucionales y desarrollos protegidos relacionados con programas y experiencias en Corea. Más que vender programas, desarrollamos experiencias coordinadas desde Corea junto a una red profesional especializada.</p>
-                    
-                    <div class="op-blocks">
-                        <!-- Block 1 -->
-                        <div class="op-block">
-                            <h4 data-translate="op-b1-title">Protected Experience Development</h4>
-                            <p data-translate="op-b1-desc">Programas y conceptos relacionados con experiencias desarrolladas en Corea bajo estructuras registradas y protegidas localmente.</p>
-                            <div class="op-gallery op-gallery-3">
-                                <div class="op-gallery-item-patent">
-                                    <div class="patent-header">REPUBLIC OF KOREA</div>
-                                    <div class="patent-title">PATENT REGISTRY</div>
-                                    <div class="patent-no">ID: 2026-X892</div>
-                                    <div class="patent-seal">APPROVED</div>
-                                </div>
-                                <div class="op-gallery-item-patent">
-                                    <div class="patent-header">REPUBLIC OF KOREA</div>
-                                    <div class="patent-title">EXPERIENCE DESIGN</div>
-                                    <div class="patent-no">ID: 2026-K734</div>
-                                    <div class="patent-seal">PROTECTED</div>
-                                </div>
-                                <div class="op-gallery-item-patent">
-                                    <div class="patent-header">REPUBLIC OF KOREA</div>
-                                    <div class="patent-title">B2B STRATEGY</div>
-                                    <div class="patent-no">ID: 2026-P012</div>
-                                    <div class="patent-seal">CERTIFIED</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Block 2 -->
-                        <div class="op-block">
-                            <h4 data-translate="op-b2-title">Official Registrations & Certified Operation</h4>
-                            <p data-translate="op-b2-desc">Parte de nuestra estructura operativa trabaja junto a registros, licencias y autorizaciones vinculadas a operación turística y programas especializados en Corea.</p>
-                            <div class="op-gallery op-gallery-6">
-                                <div class="op-gallery-item-cert">Registry Document</div>
-                                <div class="op-gallery-item-cert">Business License</div>
-                                <div class="op-gallery-item-cert">Tourism Registry</div>
-                                <div class="op-gallery-item-cert">Seoul City Auth</div>
-                                <div class="op-gallery-item-cert">B2B License</div>
-                                <div class="op-gallery-item-cert">Local Permit</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Block 3 -->
-                        <div class="op-block">
-                            <h4 data-translate="op-b3-title">Recognition & Local Credibility</h4>
-                            <p data-translate="op-b3-desc">Reconocimientos y referencias institucionales que reflejan parte de la trayectoria y presencia local de nuestra red operativa en Corea.</p>
-                            <div class="op-gallery op-gallery-6">
-                                <div class="op-gallery-item-rec">Seoul Gov Award</div>
-                                <div class="op-gallery-item-rec">K-Tourism Recognition</div>
-                                <div class="op-gallery-item-rec">Strategic Partner</div>
-                                <div class="op-gallery-item-rec">MICE Alliance S.C.</div>
-                                <div class="op-gallery-item-rec">Excellence Plaque</div>
-                                <div class="op-gallery-item-rec">Network Credential</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Closing Banner -->
-                    <div class="op-closing">
-                        <h4 data-translate="op-close-title">A reliable Korea-based alliance for Latin America.</h4>
-                        <p data-translate="op-close-desc">Nuestra fortaleza no está solamente en conectar programas, sino en desarrollar coordinación real, operación local y experiencias estratégicamente diseñadas desde Corea para el mercado latinoamericano.</p>
-                    </div>
-                </div>
-
                 <div id="mice" class="tab-content logo-grid" style="display:none;">
                     <div class="logo-placeholder">Expo Center</div>
                     <div class="logo-placeholder">Trade Fair Org</div>
@@ -1146,7 +1086,7 @@
                 </div>
             </div>
 
-            <p class="partners-disclaimer" data-translate="part-disclaimer">Algunos servicios operativos y médicos pueden ser realizados en colaboración con partners locales certificados y autorizados en Corea. Zentia Alliance (KOREA) – Strategic B2B Platform.</p>
+            <p class="partners-disclaimer" data-translate="part-disclaimer">Algunos servicios operativos y médicos pueden ser realizados en colaboración con partners locales certificados y autorizados en Corea.</p>
         </div>
     </section>
 
@@ -1205,7 +1145,7 @@
     <footer>
         <div class="container">
             <div class="footer-logo-block">
-                <span class="footer-logo">ZENTIA ALLIANCE</span>
+                <a href="#" class="footer-logo"><img src="logo.png" alt="Zentia Alliance"></a>
                 <p class="footer-slogan" data-translate="footer-slogan">Programas Estratégicos entre Corea y América Latina</p>
             </div>
             <div class="footer-divisions">
@@ -1262,19 +1202,8 @@
                 "tab-medical": "Strategic Medical Partners",
                 "tab-edu": "Education & Innovation Partners",
                 "tab-tourism": "Tourism & Operational Partners",
-                "tab-op-alliance": "Korea-Based Operational Alliance",
-                "tab-mice": "MICE & Expo Ecosystem",
-                "op-subtitle": "Infraestructura operativa, coordinación local y red profesional desarrollada en Corea para programas estratégicos entre Corea y América Latina.",
-                "op-text-main": "Zentia Alliance trabaja como un grupo de empresas, especialistas y partners estratégicos que operan localmente en Seúl, Corea. Nuestra estructura combina coordinación internacional, operación local y colaboración especializada en áreas relacionadas con turismo premium, programas educativos, medical wellness y experiencias estratégicas desarrolladas para el mercado latinoamericano. Parte de nuestra red operativa cuenta con registros comerciales, autorizaciones, reconocimientos institucionales y desarrollos protegidos relacionados con programas y experiencias en Corea. Más que vender programas, desarrollamos experiencias coordinadas desde Corea junto a una red profesional especializada.",
-                "op-b1-title": "Protected Experience Development",
-                "op-b1-desc": "Programas y conceptos relacionados con experiencias desarrolladas en Corea bajo estructuras registradas y protegidas localmente.",
-                "op-b2-title": "Official Registrations & Certified Operation",
-                "op-b2-desc": "Parte de nuestra estructura operativa trabaja junto a registros, licencias y autorizaciones vinculadas a operación turística y programas especializados en Corea.",
-                "op-b3-title": "Recognition & Local Credibility",
-                "op-b3-desc": "Reconocimientos y referencias institucionales que reflejan parte de la trayectoria y presencia local de nuestra red operativa en Corea.",
-                "op-close-title": "A reliable Korea-based alliance for Latin America.",
-                "op-close-desc": "Nuestra fortaleza no está solamente en conectar programas, sino en desarrollar coordinación real, operación local y experiencias estratégicamente diseñadas desde Corea para el mercado latinoamericano.",
-                "part-disclaimer": "Algunos servicios operativos y médicos pueden ser realizados en colaboración con partners locales certificados y autorizados en Corea. Zentia Alliance (KOREA) – Strategic B2B Platform.",
+                                "tab-mice": "MICE & Expo Ecosystem",
+                                                                                                                                                                                "part-disclaimer": "Algunos servicios operativos y médicos pueden ser realizados en colaboración con partners locales certificados y autorizados en Corea.",
                 "cont-label": "GET IN TOUCH",
                 "cont-title": "Contacto Empresarial",
                 "cont-p": "Para consultas sobre alianzas estratégicas, programas educativos, medical wellness y desarrollo de programas B2B.",
@@ -1334,18 +1263,7 @@
                 "tab-medical": "Parceiros Médicos Estratégicos",
                 "tab-edu": "Parceiros de Educação & Inovação",
                 "tab-tourism": "Parceiros de Turismo & Operacionais",
-                "tab-op-alliance": "Korea-Based Operational Alliance",
                 "tab-mice": "Ecossistema MICE & Expo",
-                "op-subtitle": "Infraestrutura operacional, coordenação local e rede profissional desenvolvida na Coreia para programas estratégicos entre a Coreia e a América Latina.",
-                "op-text-main": "A Zentia Alliance trabalha como um grupo de empresas, especialistas e parceiros estratégicos que operam localmente em Seul, Coreia. Nossa estrutura combina coordenação internacional, operação local e colaboração especializada em áreas relacionadas com turismo premium, programas educacionais, medical wellness e experiências estratégicas desenvolvidas para o mercado latino-americano. Parte de nossa rede operacional conta com registros comerciais, autorizações, reconhecimentos institucionais e desenvolvimentos protegidos relacionados com programas e experiências na Coreia. Mais do que vender programas, desenvolvemos experiências coordenadas desde a Coreia junto a uma rede profissional especializada.",
-                "op-b1-title": "Protected Experience Development",
-                "op-b1-desc": "Programas e conceitos relacionados com experiências desenvolvidas na Coreia sob estruturas registradas e protegidas localmente.",
-                "op-b2-title": "Official Registrations & Certified Operation",
-                "op-b2-desc": "Parte de nossa estrutura operacional trabalha em conjunto com registros, licenças e autorizações vinculadas à operação turística e programas especializados na Coreia.",
-                "op-b3-title": "Recognition & Local Credibility",
-                "op-b3-desc": "Reconhecimentos e referências institucionais que refletem parte da trajetória e presença local de nossa rede operacional na Coreia.",
-                "op-close-title": "A reliable Korea-based alliance for Latin America.",
-                "op-close-desc": "Nossa força não está apenas em conectar programas, mas em desenvolver coordenação real, operação local e experiências estrategicamente desenhadas desde a Coreia para o mercado latino-americano.",
                 "part-disclaimer": "Alguns serviços operacionais e médicos podem ser realizados em colaboração com parceiros locais certificados e autorizados na Coreia.",
                 "cont-label": "CONTATO",
                 "cont-title": "Contato Empresarial",

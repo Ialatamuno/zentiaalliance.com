@@ -914,9 +914,13 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 80px;
+            width: 0;
             height: 4px;
             background-color: #000000;
+            transition: width 1s ease-out 0.3s;
+        }
+        .visible h2::after {
+            width: 80px;
         }
         .section-header-center h2::after {
             left: 50%;

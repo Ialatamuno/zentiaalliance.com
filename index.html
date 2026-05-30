@@ -916,15 +916,27 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             object-fit: cover;
         }
-        @keyframes slideInUpH2 {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .visible h2 {
-            animation: slideInUpH2 0.8s ease-out forwards;
-        }
         h2 {
-            opacity: 0;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background-color: #000000;
+            transition: width 1s ease-out 0.3s;
+        }
+        .visible h2::after {
+            width: 80px;
+        }
+        .section-header-center h2::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
         @media (max-width: 992px) {
             .nosotros-layout {

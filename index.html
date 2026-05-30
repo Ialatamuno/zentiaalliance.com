@@ -904,6 +904,40 @@
                 font-size: 26px;
             }
         }
+        .nosotros-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .nosotros-layout .nosotros-img img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
+        }
+        @keyframes slideInUpH2 {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .visible h2 {
+            animation: slideInUpH2 0.8s ease-out forwards;
+        }
+        h2 {
+            opacity: 0;
+        }
+        @media (max-width: 992px) {
+            .nosotros-layout {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .nosotros-layout .header-col {
+                text-align: center;
+            }
+            .nosotros-layout .tag-cloud {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -916,7 +950,6 @@
                     <li><a href="nosotros.html" data-translate="nav-nosotros">Nosotros</a></li>
                     <li><a href="divisiones.html" data-translate="nav-divisiones">Divisiones</a></li>
                     <li><a href="partners.html" data-translate="nav-partners">Strategic Partners</a></li>
-                    <li><a href="contacto.html" data-translate="nav-contacto">Contacto</a></li>
                 </ul>
                 <div class="lang-switch">
                     <button class="lang-btn active" id="lang-es" onclick="setLanguage('es')">ES</button>

@@ -928,6 +928,24 @@
                 font-size: 26px;
             }
         }
+        h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #000000;
+        }
+        .section-header-center h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
     </style>
 </head>
 <body>
@@ -939,8 +957,7 @@
                     <li><a href="index.html" class="active" data-translate="nav-inicio">Inicio</a></li>
                     <li><a href="nosotros.html" data-translate="nav-nosotros">Nosotros</a></li>
                     <li><a href="divisiones.html" data-translate="nav-divisiones">Divisiones</a></li>
-                    <li><a href="partners.html" data-translate="nav-partners">Strategic Partners</a></li>
-                    <li><a href="contacto.html" data-translate="nav-contacto">Contacto</a></li>
+                    <li><a href="partners.html" class="active" data-translate="nav-partners">Strategic Partners</a></li>
                 </ul>
                 <div class="lang-switch">
                     <button class="lang-btn active" id="lang-es" onclick="setLanguage('es')">ES</button>

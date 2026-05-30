@@ -502,6 +502,30 @@
             background-color: var(--color-acento);
         }
 
+        .ecosystem-block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .ecosystem-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ecosystem-desc {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.6;
+        }
+
         .logo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -939,40 +963,40 @@
                     <button class="tab-btn" id="tab-education" onclick="showTab('edu')" data-translate="tab-edu">Academic & Innovation</button>
                     <button class="tab-btn" id="tab-tour" onclick="showTab('tourism')" data-translate="tab-tourism">Tourism Ecosystem & Operational Network</button>
                                         <button class="tab-btn" id="tab-m" onclick="showTab('mice')" data-translate="tab-mice">MICE, Expo & Business Ecosystem</button>
+                                        <button class="tab-btn" id="tab-cred" onclick="showTab('credentials')" data-translate="tab-credentials">Operational Credentials & Registrations</button>
                 </div>
                 
-                <div id="medical" class="tab-content logo-grid">
-                    <div class="logo-placeholder">Medical Partner 01</div>
-                    <div class="logo-placeholder">Aesthetic Center 02</div>
-                    <div class="logo-placeholder">Wellness Clinic 03</div>
-                    <div class="logo-placeholder">Skin Tech 04</div>
-                    <div class="logo-placeholder">Longevity Inst. 05</div>
-                    <div class="logo-placeholder">Health Network 06</div>
+                <div id="medical" class="tab-content">
+                    <div class="ecosystem-block">
+                        <img src="assets/Strategic Medical.png" alt="Strategic Medical" class="ecosystem-image">
+                        <p class="ecosystem-desc" data-translate="tab-med-desc">Ecosistemas médicos y wellness seleccionados para programas especializados desarrollados en Corea.</p>
+                    </div>
                 </div>
-                <div id="edu" class="tab-content logo-grid" style="display:none;">
-                    <div class="logo-placeholder">University A</div>
-                    <div class="logo-placeholder">Tech Academy</div>
-                    <div class="logo-placeholder">Innovation Hub</div>
-                    <div class="logo-placeholder">Research Center</div>
-                    <div class="logo-placeholder">Global Campus</div>
-                    <div class="logo-placeholder">Corporate Edu</div>
+                <div id="edu" class="tab-content" style="display:none;">
+                    <div class="ecosystem-block">
+                        <img src="assets/Education Innovation.png" alt="Academic & Innovation" class="ecosystem-image">
+                        <p class="ecosystem-desc" data-translate="tab-edu-desc">Ecosistemas académicos e instituciones coreanas vinculadas a programas educativos, innovación y experiencias internacionales.</p>
+                    </div>
                 </div>
-                <div id="tourism" class="tab-content logo-grid" style="display:none;">
-                    <div class="logo-placeholder">Certified DMC</div>
-                    <div class="logo-placeholder">Luxury Travel</div>
-                    <div class="logo-placeholder">K-Culture Ops</div>
-                    <div class="logo-placeholder">Seoul Lifestyle</div>
-                    <div class="logo-placeholder">Exclusive Stay</div>
-                    <div class="logo-placeholder">Transport VIP</div>
+                <div id="tourism" class="tab-content" style="display:none;">
+                    <div class="ecosystem-block">
+                        <img src="assets/Tourrism Operational.png" alt="Tourism Ecosystem & Operational Network" class="ecosystem-image">
+                        <p class="ecosystem-desc" data-translate="tab-tourism-desc">Ecosistemas turísticos, organizaciones de destino y redes operativas que apoyan el desarrollo de programas, experiencias y proyectos especializados en Corea.</p>
+                    </div>
                 </div>
 
-                <div id="mice" class="tab-content logo-grid" style="display:none;">
-                    <div class="logo-placeholder">Expo Center</div>
-                    <div class="logo-placeholder">Trade Fair Org</div>
-                    <div class="logo-placeholder">Event Partner</div>
-                    <div class="logo-placeholder">Delegation Hub</div>
-                    <div class="logo-placeholder">B2B Network</div>
-                    <div class="logo-placeholder">Asian Summit</div>
+                <div id="mice" class="tab-content" style="display:none;">
+                    <div class="ecosystem-block">
+                        <img src="assets/MICE.png" alt="MICE, Expo & Business Ecosystem" class="ecosystem-image">
+                        <p class="ecosystem-desc" data-translate="tab-mice-desc">Centros de convenciones, ecosistemas MICE y plataformas de eventos internacionales que apoyan programas, delegaciones y experiencias estratégicas desarrolladas en Corea.</p>
+                    </div>
+                </div>
+
+                <div id="credentials" class="tab-content" style="display:none;">
+                    <div class="ecosystem-block">
+                        <img src="assets/Operational Credentials (1).png" alt="Operational Credentials & Registrations" class="ecosystem-image">
+                        <p class="ecosystem-desc" data-translate="tab-credentials-desc">Registros, licencias y documentos operativos que respaldan nuestras actividades, programas y coordinación internacional desarrollada desde Corea.</p>
+                    </div>
                 </div>
             </div>
 
@@ -1037,9 +1061,15 @@
                 "part-title": "Strategic Partners & Operational Credentials",
                 "part-subtitle": "Zentia Alliance trabaja junto a universidades, hospitales, operadores turísticos y partners estratégicos registrados en Corea. Las siguientes instituciones, partners y documentos corresponden a parte de nuestra red operativa y ecosistema de colaboración en Corea.",
                 "tab-medical": "Medical & Wellness Ecosystem",
+                "tab-med-desc": "Ecosistemas médicos y wellness seleccionados para programas especializados desarrollados en Corea.",
                 "tab-edu": "Academic & Innovation",
+                "tab-edu-desc": "Ecosistemas académicos e instituciones coreanas vinculadas a programas educativos, innovación y experiencias internacionales.",
                 "tab-tourism": "Tourism Ecosystem & Operational Network",
+                "tab-tourism-desc": "Ecosistemas turísticos, organizaciones de destino y redes operativas que apoyan el desarrollo de programas, experiencias y proyectos especializados en Corea.",
                                 "tab-mice": "MICE, Expo & Business Ecosystem",
+                "tab-mice-desc": "Centros de convenciones, ecosistemas MICE y plataformas de eventos internacionales que apoyan programas, delegaciones y experiencias estratégicas desarrolladas en Corea.",
+                "tab-credentials": "Operational Credentials & Registrations",
+                "tab-credentials-desc": "Registros, licencias y documentos operativos que respaldan nuestras actividades, programas y coordinación internacional desarrollada desde Corea.",
                                                                                                                                                                                 "part-disclaimer": "Algunos servicios operativos y médicos pueden ser realizados en colaboración con partners locales certificados y autorizados en Corea.",
                 "cont-label": "GET IN TOUCH",
                 "cont-title": "Contacto Empresarial",
@@ -1098,9 +1128,15 @@
                 "part-title": "Strategic Partners & Operational Credentials",
                 "part-subtitle": "A Zentia Alliance trabalha em conjunto com universidades, hospitais, operadores turísticos e parceiros estratégicos registrados na Coreia. As seguintes instituições, parceiros e documentos correspondem a parte da nossa rede operacional e ecossistema de colaboração na Coreia.",
                 "tab-medical": "Parceiros Médicos Estratégicos",
+                "tab-med-desc": "Ecossistemas médicos e de bem-estar selecionados para programas especializados desenvolvidos na Coreia.",
                 "tab-edu": "Parceiros de Educação & Inovação",
+                "tab-edu-desc": "Ecossistemas acadêmicos e instituições coreanas vinculadas a programas educacionais, inovação e experiências internacionais.",
                 "tab-tourism": "Parceiros de Turismo & Operacionais",
+                "tab-tourism-desc": "Ecossistemas turísticos, organizações de destino e redes operacionais que apoiam o desenvolvimento de programas, experiências e projetos especializados na Coreia.",
                 "tab-mice": "Ecossistema MICE & Expo",
+                "tab-mice-desc": "Centros de convenções, ecossistemas MICE e plataformas de eventos internacionais que apoiam programas, delegações e experiências estratégicas desenvolvidas na Coreia.",
+                "tab-credentials": "Operational Credentials & Registrations",
+                "tab-credentials-desc": "Registros, licenças e documentos operacionais que apoiam as nossas atividades, programas e coordenação internacional desenvolvida a partir da Coreia.",
                 "part-disclaimer": "Alguns serviços operacionais e médicos podem ser realizados em colaboração com parceiros locais certificados e autorizados na Coreia.",
                 "cont-label": "CONTATO",
                 "cont-title": "Contato Empresarial",

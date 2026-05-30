@@ -931,7 +931,7 @@
         h2 {
             position: relative;
             display: inline-block;
-            padding-bottom: 12px;
+            padding-bottom: 14px;
         }
         h2::after {
             content: '';
@@ -939,16 +939,29 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 4px;
-            background-color: #000000;
-            transition: width 1s ease-out 0.3s;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-acento), var(--color-acento-2), var(--color-acento));
+            background-size: 200% 100%;
+            border-radius: 2px;
+            transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
         .visible h2::after {
-            width: 80px;
+            width: 90px;
         }
         .section-header-center h2::after {
             left: 50%;
             transform: translateX(-50%);
+        }
+        h2 {
+            transition: text-shadow 0.6s ease;
+        }
+        .visible h2 {
+            text-shadow: 0 0 40px rgba(0, 194, 255, 0.08);
         }
     </style>
 </head>
@@ -1043,11 +1056,12 @@
             min-width: 300px;
         }
         .footer-office-img {
-            width: 120px;
-            height: 80px;
-            border-radius: 4px;
+            width: 200px;
+            height: 120px;
+            border-radius: 6px;
             object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
         .footer-office-info h4 {
             font-size: 14px;
@@ -1070,24 +1084,10 @@
             margin-top: 8px;
         }
 
-        .footer-center {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            min-width: 250px;
-        }
-
         .footer-right {
             flex: 1;
             text-align: right;
             min-width: 250px;
-        }
-        
-        .footer-logo-block {
-            margin-bottom: 0 !important;
-        }
-        .footer-logo img {
-            margin: 0 0 15px auto !important;
         }
         
         .footer-divisions {
@@ -1136,21 +1136,13 @@
                     </div>
                 </div>
 
-                <!-- Center: Divisions -->
-                <div class="footer-center">
+                <!-- Right: Divisions -->
+                <div class="footer-right">
                     <div class="footer-divisions">
                         <span data-translate="footer-div-tourism">Turismo</span>
                         <span data-translate="footer-div-education">Educación</span>
                         <span data-translate="footer-div-medical">Medical Wellness</span>
                         <span data-translate="footer-div-mice">MICE & Eventos Internacionales</span>
-                    </div>
-                </div>
-
-                <!-- Right: Logo -->
-                <div class="footer-right">
-                    <div class="footer-logo-block">
-                        <a href="#" class="footer-logo"><img src="assets/logo.jpg.jpeg" alt="Zentia Alliance"></a>
-                        <p class="footer-slogan" data-translate="footer-slogan">Programas Estratégicos entre Corea y América Latina</p>
                     </div>
                 </div>
             </div>

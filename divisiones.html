@@ -1026,109 +1026,97 @@
         .footer-content-wrapper {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            gap: 40px;
+            align-items: flex-start;
+            gap: 30px;
             text-align: left;
             flex-wrap: wrap;
         }
         
-        .footer-office {
+        .footer-col {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            align-items: flex-start;
+            gap: 15px;
             flex: 1;
-            min-width: 300px;
+            min-width: 250px;
         }
+
         .footer-office-img {
-            width: 130px;
-            height: 180px;
+            width: 80px;
+            height: 110px;
             border-radius: 6px;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+            margin-top: 2px;
         }
+
         .footer-office-info h4 {
             font-size: 14px;
             color: var(--color-blanco);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
         }
+
         .footer-office-info p {
             font-size: 13px;
             color: var(--color-gris-medio);
             margin-bottom: 5px;
             line-height: 1.4;
         }
+
         .footer-office-info .office-highlight {
             color: var(--color-acento);
             font-style: italic;
             margin-bottom: 0;
             margin-top: 8px;
-        }
-
-        .footer-right {
-            flex: 0 0 auto;
-            text-align: right;
-            margin-left: auto;
-            padding-right: 20px;
-        }
-        
-        .footer-divisions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 0 !important;
-            text-align: left;
-        }
-        .footer-divisions span:not(:last-child)::after {
-            content: none !important;
+            font-size: 13px;
         }
 
         @media (max-width: 992px) {
             .footer-content-wrapper {
                 flex-direction: column;
-                text-align: center;
-                gap: 30px;
+                text-align: left;
+                gap: 40px;
             }
-            .footer-office {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-right {
-                text-align: center;
-            }
-            .footer-logo img {
-                margin: 0 auto 15px auto !important;
-            }
-            .footer-divisions {
-                text-align: center;
-                align-items: center;
+            .footer-col {
+                min-width: 100%;
             }
         }
     </style>
     <footer>
         <div class="container">
             <div class="footer-content-wrapper">
-                <!-- Left: Office -->
-                <div class="footer-office">
-                    <img src="assets/zentia_alliance.jpg" alt="Zentia Alliance" class="footer-office-img">
+                <!-- Left: Korea Office -->
+                <div class="footer-col">
+                    <img src="assets/zentia_alliance.jpg" alt="Korea Office" class="footer-office-img">
                     <div class="footer-office-info">
-                        <h4>Korea Office</h4>
+                        <h4>KOREA OFFICE</h4>
                         <p>309 Gangnam-daero, Seocho-gu<br>Seoul, Republic of Korea</p>
-                        <p style="margin-top: -3px;"><a href="mailto:latam@zentiaalliance.com" style="color: var(--color-acento); text-decoration: none; font-size: 13px;">latam@zentiaalliance.com</a></p>
-                        <p class="office-highlight">Strategic Hub for Programs & Partnerships in Korea</p>
+                        <p class="office-highlight">Operations & Partner Coordination Hub in Korea</p>
                     </div>
                 </div>
 
-                <!-- Right: Divisions -->
-                <div class="footer-right">
-                    <div class="footer-divisions">
-                        <span data-translate="footer-div-tourism">Turismo</span>
-                        <span data-translate="footer-div-education">Educación</span>
-                        <span data-translate="footer-div-medical">Medical Wellness</span>
-                        <span data-translate="footer-div-mice">MICE & Eventos Internacionales</span>
+                <!-- Center: Latam Office -->
+                <div class="footer-col">
+                    <img src="assets/latam_map.png" alt="Latam Office - Asuncion Paraguay" class="footer-office-img">
+                    <div class="footer-office-info">
+                        <h4>LATAM OFFICE</h4>
+                        <p>Asunción, Paraguay</p>
+                        <p class="office-highlight" style="font-style: normal; color: var(--color-gris-medio);">Commercial Hub for Latin America</p>
+                        <p class="office-highlight">Partner Development & Regional Coordination</p>
+                    </div>
+                </div>
+
+                <!-- Right: Contact -->
+                <div class="footer-col">
+                    <div class="footer-office-info">
+                        <h4>CONTACT</h4>
+                        <p style="margin-bottom: 12px;"><a href="mailto:latam@zentiaalliance.com" style="color: var(--color-acento); text-decoration: none; font-size: 13px;">latam@zentiaalliance.com</a></p>
+                        <p>Commercial Inquiries<br>Strategic Partnerships</p>
                     </div>
                 </div>
             </div>

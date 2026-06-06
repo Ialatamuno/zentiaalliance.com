@@ -1,14 +1,21 @@
 const fs = require('fs');
 
+// Cargar el contenido HTML completo del archivo index.html base
 let html = fs.readFileSync('c:\\Users\\Usuario\\OneDrive\\Documents\\sitionuevo\\index.html', 'utf8');
 
-// 1. Fonts
+// ==========================================
+// 1. FUENTES TIPOGRÁFICAS
+// ==========================================
+// Reemplazar la fuente Cormorant Garamond por la nueva familia Outfit
 html = html.replace(
     'family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans',
     'family=Outfit:wght@300;400;500;600;700&family=DM+Sans'
 );
 
-// 2. CSS variables and generic styles
+// ==========================================
+// 2. VARIABLES CSS Y ESTILOS GENÉRICOS
+// ==========================================
+// Reemplazar las variables globales (:root) para definir la nueva paleta de colores oscuros y sombreados
 html = html.replace(
     /        :root \{[\s\S]*?--shadow:[^\}]+\}/,
     `        :root {
@@ -27,6 +34,7 @@ html = html.replace(
         }`
 );
 
+// Ajustar los estilos genéricos de los encabezados (h1, h2, h3, h4) para utilizar la nueva fuente Outfit
 html = html.replace(
     /        h1, h2, h3, h4, \.display-font \{[\s\S]*?color: var\(--color-azul-marino\);\r?\n        \}/,
     `        h1, h2, h3, h4, .display-font {
@@ -37,7 +45,10 @@ html = html.replace(
         }`
 );
 
-// 3. Navbar
+// ==========================================
+// 3. BARRA DE NAVEGACIÓN (NAVBAR)
+// ==========================================
+// Añadir un efecto de difuminado (backdrop-filter) y ajustar colores para hacer el menú flotante más moderno
 html = html.replace(
     /        nav \{[\s\S]*?transition: var\(--transition\);\r?\n        \}/,
     `        nav {
@@ -57,7 +68,10 @@ html = html.replace(
         }`
 );
 
-// 4. Logo invert
+// ==========================================
+// 4. INVERSIÓN DE COLORES PARA EL LOGO
+// ==========================================
+// Modificar los estilos del logo principal para que se vea blanco (invertir colores) sobre fondos oscuros
 html = html.replace(
     /        \.logo img \{[\s\S]*?object-fit: contain;\r?\n        \}/,
     `        .logo img {
@@ -68,6 +82,7 @@ html = html.replace(
             mix-blend-mode: screen;
         }`
 );
+// Realizar lo mismo para el logo del pie de página (footer)
 html = html.replace(
     /        \.footer-logo img \{[\s\S]*?display: block;\r?\n        \}/,
     `        .footer-logo img {
@@ -81,7 +96,10 @@ html = html.replace(
         }`
 );
 
-// 5. Buttons
+// ==========================================
+// 5. ESTILOS DE BOTONES
+// ==========================================
+// Actualizar el diseño del botón principal relleno (gradientes y sombras)
 html = html.replace(
     /        \.btn-filled \{[\s\S]*?border: 1px solid var\(--color-acento\);\r?\n        \}/,
     `        .btn-filled {
@@ -91,6 +109,7 @@ html = html.replace(
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }`
 );
+// Actualizar el estilo del botón relleno al pasar el mouse por encima (hover)
 html = html.replace(
     /        \.btn-filled:hover \{[\s\S]*?color: var\(--color-acento\);\r?\n        \}/,
     `        .btn-filled:hover {
@@ -100,6 +119,7 @@ html = html.replace(
             transform: translateY(-2px);
         }`
 );
+// Actualizar el botón delineado (transparente con borde)
 html = html.replace(
     /        \.btn-outline \{[\s\S]*?border: 1px solid var\(--color-blanco\);\r?\n        \}/,
     `        .btn-outline {
@@ -108,6 +128,7 @@ html = html.replace(
             border: 1px solid rgba(255, 255, 255, 0.2);
         }`
 );
+// Efecto hover para el botón delineado
 html = html.replace(
     /        \.btn-outline:hover \{[\s\S]*?color: var\(--color-azul-marino\);\r?\n        \}/,
     `        .btn-outline:hover {
@@ -117,13 +138,19 @@ html = html.replace(
         }`
 );
 
-// 6. Hero background
+// ==========================================
+// 6. FONDO DE LA SECCIÓN HERO
+// ==========================================
+// Cambiar la imagen y el gradiente de fondo de la cabecera inicial
 html = html.replace(
     /linear-gradient\(rgba\(11, 30, 61, 0\.55\), rgba\(11, 30, 61, 0\.55\)\), url\('seoul_hero\.png'\)/,
     `linear-gradient(rgba(6, 8, 22, 0.6), rgba(6, 8, 22, 0.9)), url('assets/seoul_tech_hero.png')`
 );
 
-// 7. Cards
+// ==========================================
+// 7. TARJETAS DE DIVISIONES (CARDS)
+// ==========================================
+// Aplicar estilo de cristal o blur a las tarjetas de servicios/divisiones
 html = html.replace(
     /        \.division-card \{[\s\S]*?gap: 20px;\r?\n        \}/,
     `        .division-card {
@@ -140,6 +167,7 @@ html = html.replace(
             backdrop-filter: blur(10px);
         }`
 );
+// Efecto flotante en hover para las tarjetas de divisiones
 html = html.replace(
     /        \.division-card:hover \{[\s\S]*?border-left-width: 8px;\r?\n        \}/,
     `        .division-card:hover {
@@ -151,7 +179,10 @@ html = html.replace(
         }`
 );
 
-// 8. Sections that were white/light
+// ==========================================
+// 8. CORRECCIONES PARA SECCIONES CON FONDO CLARO
+// ==========================================
+// Ajustar a tema oscuro secciones que previamente eran blancas
 html = html.replace(
     /        \.why-section \{\r?\n            background-color: var\(--color-blanco\);\r?\n        \}/,
     `        .why-section {
@@ -165,7 +196,10 @@ html = html.replace(
         }`
 );
 
-// Contact form fixes for dark theme
+// ==========================================
+// 9. FORMULARIO DE CONTACTO PARA TEMA OSCURO
+// ==========================================
+// Ajustes en campos de texto, select y botones para que coincidan con el diseño general oscuro
 html = html.replace(
     /        \.contact-form input, \.contact-form select, \.contact-form textarea \{[\s\S]*?transition: var\(--transition\);\r?\n        \}/,
     `        .contact-form input, .contact-form select, .contact-form textarea {
@@ -203,7 +237,10 @@ html = html.replace(
         }`
 );
 
-// Adjust Tags
+// ==========================================
+// 10. AJUSTE DE ETIQUETAS (TAGS)
+// ==========================================
+// Estilizar pequeños marcadores o etiquetas de texto con el color de acento
 html = html.replace(
     /        \.tag \{[\s\S]*?letter-spacing: 0\.05em;\r?\n        \}/,
     `        .tag {
@@ -218,11 +255,15 @@ html = html.replace(
         }`
 );
 
-// Footer
+// ==========================================
+// 11. AJUSTES AL PIE DE PÁGINA (FOOTER)
+// ==========================================
+// Asegurarse de que utilice el color marino correcto
 html = html.replace(
     /        footer \{\r?\n            background-color: var\(--color-azul-marino\);/,
     `        footer {\n            background-color: var(--color-azul-marino);`
 );
 
+// Finalmente, reescribir el archivo HTML y notificar al usuario
 fs.writeFileSync('c:\\Users\\Usuario\\OneDrive\\Documents\\sitionuevo\\index.html', html, 'utf8');
-console.log('Refactor script applied.');
+console.log('Script de refactorización aplicado correctamente.');

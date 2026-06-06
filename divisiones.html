@@ -696,7 +696,7 @@
             margin: 0 auto;
         }
 
-        /* Contact Section */
+        /* Sección de Contacto */
         .contacto {
             background-color: var(--color-fondo);
         }
@@ -769,7 +769,7 @@
             color: var(--color-blanco);
         }
 
-        /* Form */
+        /* Formulario */
         .contact-form {
             display: grid;
             gap: 20px;
@@ -815,7 +815,7 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
+        /* Pie de página (Footer) */
         footer {
             background-color: var(--color-azul-marino);
             padding: 80px 0 40px;
@@ -870,7 +870,7 @@
             font-size: 13px;
         }
 
-        /* Responsive */
+        /* Reglas Responsive (Adaptación para móviles) */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 52px; }
             .nosotros-grid, .contacto-grid { grid-template-columns: 1fr; gap: 60px; }
@@ -1123,7 +1123,7 @@
         </div>
     </footer>
 <script>
-        // Translations Dictionary
+        // Diccionario de Traducciones: Almacena los textos en distintos idiomas
         const translations = {
             es: {
                 "nav-inicio": "Inicio",
@@ -1249,9 +1249,9 @@
             }
         };
 
-        // Scroll interactions
+        // Interacciones de Desplazamiento (Scroll): Cambia el estilo del menú al bajar
         
-    // Auto-set active nav link
+    // Auto-seleccionar enlace activo: Resalta en el menú la página actual
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.classList.remove('active');
@@ -1269,7 +1269,7 @@
             }
         });
 
-        // Intersection Observer for scroll animations
+        // Observador de Intersección: Activa animaciones cuando los elementos entran en pantalla
         const observerOptions = {
             threshold: 0.1
         };
@@ -1286,26 +1286,26 @@
             observer.observe(section);
         });
 
-        // Tab Switching for Partners
+        // Cambio de Pestañas (Tabs): Lógica para mostrar/ocultar el contenido de los partners
         function showTab(tabId) {
-            // Hide all tab contents
+            // Ocultar todo el contenido de las pestañas
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.style.display = 'none';
             });
             
-            // Remove active class from all buttons
+            // Quitar la clase "active" de todos los botones
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
 
-            // Show selected tab content
+            // Mostrar el contenido de la pestaña seleccionada
             document.getElementById(tabId).style.display = 'grid';
             
-            // Add active class to clicked button
+            // Agregar la clase "active" al botón clickeado
             event.currentTarget.classList.add('active');
         }
 
-        // Language Switching Engine
+        // Motor de Cambio de Idioma: Maneja la lógica de traducción de la página
         let currentLang = localStorage.getItem('selectedLang') || 'es';
 
         function setLanguage(lang) {
@@ -1313,18 +1313,18 @@
             currentLang = lang;
             localStorage.setItem('selectedLang', lang);
 
-            // Toggle active classes on language buttons
+            // Alternar clases "active" en los botones selectores de idioma
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             document.getElementById(`lang-${lang}`).classList.add('active');
 
-            // Apply fade transition for smooth premium feel
+            // Aplicar transición de desvanecimiento (fade) para un efecto visual suave y moderno
             const translatableElements = document.querySelectorAll('[data-translate], [data-translate-placeholder]');
             translatableElements.forEach(el => el.classList.add('fade-out'));
 
             setTimeout(() => {
-                // Update standard translatable texts
+                // Actualizar los textos estándar que requieren traducción
                 document.querySelectorAll('[data-translate]').forEach(el => {
                     const key = el.getAttribute('data-translate');
                     if (translations[lang] && translations[lang][key]) {
@@ -1332,7 +1332,7 @@
                     }
                 });
 
-                // Update input/textarea placeholders
+                // Actualizar los textos de ayuda (placeholders) en campos de formulario
                 document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
                     const key = el.getAttribute('data-translate-placeholder');
                     if (translations[lang] && translations[lang][key]) {
@@ -1340,17 +1340,17 @@
                     }
                 });
 
-                // Remove fade-out to trigger smooth fade-in
+                // Quitar la clase "fade-out" para activar la transición de aparición (fade-in)
                 translatableElements.forEach(el => el.classList.remove('fade-out'));
             }, 250);
         }
 
-        // Initialize Language on load
+        // Inicializar Idioma al Cargar: Configura el idioma correcto apenas carga la página
         document.addEventListener('DOMContentLoaded', () => {
             setLanguage(currentLang);
         });
 
-        // Form Submission (Simulated)
+        // Envío de Formulario (Simulado): Captura el envío y muestra un mensaje de confirmación
         const form = document.querySelector('.contact-form');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
